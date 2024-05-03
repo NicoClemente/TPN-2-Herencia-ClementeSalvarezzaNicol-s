@@ -1,0 +1,36 @@
+@startuml
+
+package "EjercicioEntregable8" {
+    class Tarjeta {
+        - entidadFinanciera: String
+        - entidadBancaria: String
+        - numeroTarjeta: String
+        - saldoDisponible: double
+        - dniTitular: String
+        - nombreTitular: String
+        - apellidoTitular: String
+        - telefonoTitular: String
+        - mailTitular: String
+
+        + Tarjeta(entidadFinanciera: String, entidadBancaria: String, numeroTarjeta: String, saldoDisponible: double, dniTitular: String, nombreTitular: String, apellidoTitular: String, telefonoTitular: String, mailTitular: String)
+        + getSaldoDisponible(): double
+        + getNombreTitular(): String
+        + getApellidoTitular(): String
+        + toString(): String
+    }
+
+    class Posnet {
+        + efectuarPago(tarjeta: Tarjeta, monto: double, cuotas: int): String
+    }
+
+    class Principal {
+        + main(args: String[]): void
+    }
+
+    Tarjeta --> Posnet
+    Posnet --> Tarjeta
+    Principal --> Tarjeta
+    Principal --> Posnet
+}
+
+@enduml

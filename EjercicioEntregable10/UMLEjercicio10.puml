@@ -1,0 +1,80 @@
+@startuml
+
+package EjercicioEntregable10 {
+    class Inmueble {
+        - identificadorInmobiliario: int
+        - area: double
+        - direccion: String
+        + Inmueble(identificadorInmobiliario: int, area: double, direccion: String)
+        + imprimir(): void
+    }
+
+    class InmuebleComercial {
+        + InmuebleComercial(identificadorInmobiliario: int, area: double, direccion: String)
+        + imprimir(): void
+    }
+
+    class Vivienda {
+        - numHabitaciones: int
+        - numBanos: int
+        + Vivienda(identificadorInmobiliario: int, area: double, direccion: String, numHabitaciones: int, numBanos: int)
+        + imprimir(): void
+    }
+
+    class Apartamento {
+        - valorAdministracion: double
+        + Apartamento(identificadorInmobiliario: int, area: double, direccion: String, numHabitaciones: int, numBanos: int, valorAdministracion: double)
+        + imprimir(): void
+    }
+
+    class Casa {
+        + Casa(identificadorInmobiliario: int, area: double, direccion: String, numHabitaciones: int, numBanos: int)
+        + imprimir(): void
+    }
+
+    class CasaConjuntoCerrado {
+        - valorAdministracion: double
+        - areasComunes: boolean
+        + CasaConjuntoCerrado(identificadorInmobiliario: int, area: double, direccion: String, numHabitaciones: int, numBanos: int, valorAdministracion: double, areasComunes: boolean)
+        + imprimir(): void
+    }
+
+    class CasaIndependiente {
+        + CasaIndependiente(identificadorInmobiliario: int, area: double, direccion: String, numHabitaciones: int, numBanos: int)
+        + imprimir(): void
+    }
+
+    class DepartamentoFamiliar {
+        + DepartamentoFamiliar(identificadorInmobiliario: int, area: double, direccion: String, numHabitaciones: int, numBanos: int, valorAdministracion: double)
+        + imprimir(): void
+    }
+
+    class LocalComercial {
+        - esInterno: boolean
+        - centroComercial: String
+        + LocalComercial(identificadorInmobiliario: int, area: double, direccion: String, esInterno: boolean, centroComercial: String)
+        + imprimir(): void
+    }
+
+    class Monoambiente {
+        + Monoambiente(identificadorInmobiliario: int, area: double, direccion: String, valorAdministracion: double)
+        + imprimir(): void
+    }
+
+    class Oficina {
+        + Oficina(identificadorInmobiliario: int, area: double, direccion: String)
+        + imprimir(): void
+    }
+
+    Inmueble <|-- Vivienda
+    Vivienda <|-- Apartamento
+    Vivienda <|-- Casa
+    Casa <|-- CasaConjuntoCerrado
+    Casa <|-- CasaIndependiente
+    Apartamento <|-- DepartamentoFamiliar
+    Inmueble <|-- InmuebleComercial
+    InmuebleComercial <|-- LocalComercial
+    InmuebleComercial <|-- Oficina
+}
+
+@enduml

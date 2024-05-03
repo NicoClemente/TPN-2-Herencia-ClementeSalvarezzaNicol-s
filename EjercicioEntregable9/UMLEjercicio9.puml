@@ -1,0 +1,39 @@
+package EjercicioEntregable9 {
+    class Empleado {
+        - nombre: String
+        - dni: String
+        - domicilio: String
+        - anioIngreso: int
+        - sueldoBasico: double
+        + Empleado(nombre: String, dni: String, domicilio: String, anioIngreso: int)
+        + imprimirRecibo(): void
+    }
+
+    class Vendedor {
+        - ventasMensuales: double
+        + Vendedor(nombre: String, dni: String, domicilio: String, anioIngreso: int, ventasMensuales: double)
+        + imprimirRecibo(): void
+    }
+
+    class Cajero {
+        + Cajero(nombre: String, dni: String, domicilio: String, anioIngreso: int)
+    }
+
+    class Administrativo {
+        - jornadaCompleta: boolean
+        + Administrativo(nombre: String, dni: String, domicilio: String, anioIngreso: int, jornadaCompleta: boolean)
+        + imprimirRecibo(): void
+    }
+
+    class Repartidor {
+        - repartosMensuales: int
+        + Repartidor(nombre: String, dni: String, domicilio: String, anioIngreso: int, repartosMensuales: int)
+        + imprimirRecibo(): void
+    }
+
+    Empleado <|-- Vendedor
+    Empleado <|-- Administrativo
+    Empleado <|-- Repartidor
+}
+
+@enduml
